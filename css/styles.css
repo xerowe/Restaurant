@@ -38,6 +38,26 @@ section {
   padding: 50px 0;
 }
 
+.title {
+  font-size: 22px;
+  letter-spacing: 0.25em;
+  color: #f5bb00;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.sub-title {
+  font-size: 22px;
+  line-height: 30px;
+  color: #f5bb00;
+}
+
+.text {
+  font-size: 14px;
+  color: #555555;
+  line-height: 25px;
+}
+
 #hero {
   background: url("../images/hero-bg.jpg") center center no-repeat;
   background-size: cover;
@@ -88,20 +108,22 @@ section {
 }
 .bg-img #about .wrapper {
   display: flex;
-  align-items: center;
 }
 .bg-img #about .wrapper .about-left {
   flex-basis: 40%;
   margin-right: 160px;
+  margin-top: 80px;
 }
 .bg-img #about .wrapper .about-left h3 {
   font-size: 22px;
   letter-spacing: 0.25em;
   color: #f5bb00;
   margin-bottom: 50px;
+  text-align: center;
   color: #555555;
   font-size: 16px;
   margin-bottom: 20px;
+  text-align: left;
 }
 .bg-img #about .wrapper .about-left h3 span {
   display: inline-block;
@@ -112,20 +134,25 @@ section {
   vertical-align: middle;
   margin-right: 30px;
 }
-.bg-img #about .wrapper .about-left h5 {
-  font-size: 22px;
-  line-height: 30px;
-  color: #f5bb00;
-}
 .bg-img #about .wrapper .about-left p {
-  font-size: 14px;
-  color: #555555;
-  line-height: 25px;
   font-size: 16px;
+}
+.bg-img #about .wrapper .about-left a {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fdfcfc;
+  border: 2px solid #f5bb00;
+  padding: 10px 20px;
+  color: #f5bb00;
+  font-style: italic;
 }
 .bg-img #about .wrapper .about-right {
   flex-basis: 60%;
   position: relative;
+  max-height: 550px;
 }
 .bg-img #about .wrapper .about-right img {
   overflow: hidden;
@@ -148,6 +175,13 @@ section {
 .bg-img #about .wrapper .about-right img:nth-child(3) {
   z-index: 2;
   top: 310px;
+}
+
+#news {
+  background: rgba(245, 187, 0, 0.9);
+}
+#news .cardNews {
+  display: flex;
 }
 
 /*# sourceMappingURL=styles.css.map */

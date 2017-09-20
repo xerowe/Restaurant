@@ -4,6 +4,16 @@
 
 section
   padding: 50px 0
+
+.title
+  +title
+
+.sub-title
+  +sub-title
+
+.text
+  +p
+
 #hero
   background: url('../images/hero-bg.jpg') center center no-repeat
   background-size: cover
@@ -29,29 +39,22 @@ section
   .btn
     text-align: center
     a
-      display: inline-block
-      margin: 0 auto
-      text-align: center
-      font:
-        size: 16px
-        weight: bold
-      color: $white
-      border: 2px solid $orange
-      padding: 10px 20px
+      +btn
 
 .bg-img
   background: url('../images/bg.jpg') center center no-repeat
   #about .wrapper
     display: flex
-    align-items: center
     .about-left
       flex-basis: 40%
       margin-right: 160px
+      margin-top: 80px
       h3
         +title
         color: $black
         font-size: 16px
         margin-bottom: 20px
+        text-align: left
         span
           display: inline-block
           background-color: $orange
@@ -60,16 +63,16 @@ section
           border-radius: 5px
           vertical-align: middle
           margin-right: 30px
-      h5
-        font-size: 22px
-        line-height: 30px
-        color: $orange
       p
-        +p
         font-size: 16px
+      a
+        +btn
+        color: $orange
+        font-style: italic
     .about-right
       flex-basis: 60%
       position: relative
+      max-height: 550px
       img
         overflow: hidden
         max-width: 300px
@@ -88,3 +91,8 @@ section
         &:nth-child(3)
           z-index: 2
           top: 310px
+
+#news
+  background: rgba( $orange, .9 )
+  .cardNews
+    display: flex
