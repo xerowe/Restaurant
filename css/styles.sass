@@ -203,40 +203,72 @@ section
           height: 30px
 
 #contact
-  background: #eaeaea
-  .title
-    text-align: right
-  .contact-container
-    display: flex
-    justify-content: flex-end
-    position: relative
-    #map
-      flex-basis: 75%
-      height: 450px
-    .contact-info
-      position: absolute
-      z-index: 1
-      padding: 50px 100px 150px 40px
-      background: rgba($orange, 0.95)
-      left: 0
-      margin-top: -70px
-      h5
+  padding: 50px 0 0
+  position: relative
+  #map
+    width: 100%
+    height: 600px
+  .contact-info
+    display: inline-block
+    position: absolute
+    top: 100px
+    padding: 50px 100px 150px 40px
+    background: rgba($orange, 0.95)
+    left: 50%
+    +box-shadow
+    h5
+      color: $white
+      font:
+        size: 18px
+        weight: bold
+      margin-bottom: 50px
+    p
+      font-size: 16px
+      line-height: 26px
+      color: $white
+    .btn
+      margin-top: 50px
+      a
+        +btn
         color: $white
-        font:
-          size: 18px
-          weight: bold
-          margin-bottom: 50px
-      p
-        font-size: 16px
-        line-height: 26px
-        color: $white
-      .btn
-        margin-top: 50px
-        a
-          +btn
-          color: $white
-          border: 2px solid $white
-          font-style: italic
+        border: 2px solid $white
+        font-style: italic
+//
+// #contact
+//   background: #eaeaea
+//   .title
+//     text-align: right
+//   .contact-container
+//     display: flex
+//     justify-content: flex-end
+//     position: relative
+//     #map
+//       flex-basis: 75%
+//       height: 450px
+//     .contact-info
+//       position: absolute
+//       z-index: 1
+//       padding: 50px 100px 150px 40px
+//       background: rgba($orange, 0.95)
+//       left: 0
+//       margin-top: -70px
+//       h5
+//         color: $white
+//         font:
+//           size: 18px
+//           weight: bold
+//           margin-bottom: 50px
+//       p
+//         font-size: 16px
+//         line-height: 26px
+//         color: $white
+//       .btn
+//         margin-top: 50px
+//         a
+//           +btn
+//           color: $white
+//           border: 2px solid $white
+//           font-style: italic
 
 footer
   background: #24252f

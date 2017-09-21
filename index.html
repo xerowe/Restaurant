@@ -134,19 +134,17 @@
     </div>
   </section>
   <section id="contact">
-    <div class="wrapper">
-      <h2 class="title">НАМЕРЕТЕ НИ</h2>
-      <div class="contact-container">
-      <div class="contact-info">
-        <h5>Vestibulum dapibus varius.</h5>
-        <p>44 Shirley Ave.<br />West Chicago, IL 60185</p>
-        <p><span>(226) 906-2721</span><span>(671) 925-1352</span></p>
-        <p>youremail@gmail.com</p>
-        <div class="btn"><a href="#">Запази маса</a></div>
+      <div id="map"></div>
+      <div class="wrapper">
+        <div class="contact-info">
+          <h5>Vestibulum dapibus varius.</h5>
+          <p>44 Shirley Ave.<br />West Chicago, IL 60185</p>
+          <p><span>(226) 906-2721</span><span>(671) 925-1352</span></p>
+          <p>youremail@gmail.com</p>
+          <div class="btn"><a href="#">Запази маса</a></div>
+        </div>
       </div>
-        <div id="map"></div>
-      </div>
-    </div>
+
   </section>
   <footer>
     <div class="wrapper">
@@ -184,9 +182,10 @@
   <script>
         function initMap() {
           var uluru = {lat: 42.659147, lng: 23.336475};
+          var left = {lat: 42.656964, lng: 23.356586};
           var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 14,
-            center: uluru
+            zoom: 15,
+            center: left
           });
           var marker = new google.maps.Marker({
             position: uluru,

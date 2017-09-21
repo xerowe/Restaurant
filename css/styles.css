@@ -324,43 +324,39 @@ section {
 }
 
 #contact {
-  background: #eaeaea;
-}
-#contact .title {
-  text-align: right;
-}
-#contact .contact-container {
-  display: flex;
-  justify-content: flex-end;
+  padding: 50px 0 0;
   position: relative;
 }
-#contact .contact-container #map {
-  flex-basis: 75%;
-  height: 450px;
+#contact #map {
+  width: 100%;
+  height: 600px;
 }
-#contact .contact-container .contact-info {
+#contact .contact-info {
+  display: inline-block;
   position: absolute;
-  z-index: 1;
+  top: 100px;
   padding: 50px 100px 150px 40px;
   background: rgba(245, 187, 0, 0.95);
-  left: 0;
-  margin-top: -70px;
+  left: 50%;
+  box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.2);
+  border-radius: 0.475rem;
+  transition: all 0.3s ease;
 }
-#contact .contact-container .contact-info h5 {
+#contact .contact-info h5 {
   color: #fdfcfc;
   font-size: 18px;
   font-weight: bold;
-  font-margin-bottom: 50px;
+  margin-bottom: 50px;
 }
-#contact .contact-container .contact-info p {
+#contact .contact-info p {
   font-size: 16px;
   line-height: 26px;
   color: #fdfcfc;
 }
-#contact .contact-container .contact-info .btn {
+#contact .contact-info .btn {
   margin-top: 50px;
 }
-#contact .contact-container .contact-info .btn a {
+#contact .contact-info .btn a {
   display: inline-block;
   margin: 0 auto;
   text-align: center;
