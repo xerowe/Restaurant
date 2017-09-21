@@ -14,6 +14,9 @@ section
 .text
   +p
 
+.footer-title
+  +footer-title
+
 #hero
   background: url('../images/hero-bg.jpg') center center no-repeat
   background-size: cover
@@ -134,7 +137,7 @@ section
     ul
       display: flex
       justify-content: space-around
-      max-width: 800px
+      max-width: 600px
       margin: 0 auto
       margin-bottom: 50px
       .active
@@ -170,25 +173,105 @@ section
     flex-wrap: wrap
     justify-content: center
     .tumb-img
-      flex-basis: 25%
-      width: 350px
+      flex-basis: 24%
       height: 250px
-      img.wide
-      max-width: 100%
-      max-height: 100%
-      height: auto
-      img.tall
-      max-height: 100%
-      max-width: 100%
-      width: auto
+      border: 2px solid $white
+      overflow: hidden
+      position: relative
+      background: null
+      transition: 10s ease-out
+      &:hover
+        .tumb-overlay
+          background-color: rgba($orange, 0.8)
+          display: flex
+          +change-color
+        img
+          +pulse
+      img
+        height: 100%
+        border-radius: 2px
+      .tumb-overlay
+        position: absolute
+        justify-content: center
+        align-items: center
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        display: none
+        img
+          height: 30px
 
+#contact
+  background: #eaeaea
+  .title
+    text-align: right
+  .contact-container
+    display: flex
+    justify-content: flex-end
+    position: relative
+    #map
+      flex-basis: 75%
+      height: 450px
+    .contact-info
+      position: absolute
+      z-index: 1
+      padding: 50px 100px 150px 40px
+      background: rgba($orange, 0.95)
+      left: 0
+      margin-top: -70px
+      h5
+        color: $white
+        font:
+          size: 18px
+          weight: bold
+          margin-bottom: 50px
+      p
+        font-size: 16px
+        line-height: 26px
+        color: $white
+      .btn
+        margin-top: 50px
+        a
+          +btn
+          color: $white
+          border: 2px solid $white
+          font-style: italic
+
+footer
+  background: #24252f
+  color: $soft-white
+  font-size: 10px
+  line-height: 18px
+  padding: 20px 0
+  .wrapper
+    display: flex
+    justify-content: space-between
+    .site-map
+      ul
+        list-style-type: disc
+      a
+        color: $soft-white
+        line-height: 25px
+    .social
+      img
+        margin-right: 10px
+.copyright
+  font-size: 10px
+  color: $soft-white
+  padding-top: 20px
+  padding-bottom: 5px
+  background: #282934
+  text-align: center
 
 @media (max-width: 1260px)
   #menu .dishes-container
     justify-content: space-around
   .about-right
     display: none
-//
+  .tumb-img
+    flex-basis: 32%
+
 // @media (max-width: 760px)
 //   .dishes
 //     flex-basis: 100% !important

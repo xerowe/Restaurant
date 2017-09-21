@@ -108,17 +108,94 @@
     <div class="wrapper">
       <h2 class="title">Галерия</h2>
       <div class="gallery-container">
-        <div class="tumb-img"><img src="images/showcase1.jpg" alt=""></div>
-        <div class="tumb-img"><img src="images/showcase2.jpg" alt=""></div>
-        <div class="tumb-img"><img src="images/showcase3.jpg" alt=""></div>
-        <div class="tumb-img"><img src="images/showcase4.jpg" alt=""></div>
+        <div class="tumb-img"><img src="images/showcase1.jpg" alt="">
+          <a class="tumb-overlay show" href="#"><img src="images/zoom.svg" alt=""></a>
+        </div>
+        <div class="tumb-img"><img src="images/showcase2.jpg" alt="">
+          <a class="tumb-overlay show" href="#"><img src="images/zoom.svg" alt=""></a>
+        </div>
+        <div class="tumb-img"><img src="images/showcase3.jpg" alt="">  <a class="tumb-overlay show" href="#"><img src="images/zoom.svg" alt=""></a>
+        </div>
+        <div class="tumb-img"><img src="images/showcase4.jpg" alt="">
+          <a class="tumb-overlay show" href="#"><img src="images/zoom.svg" alt=""></a>
+        </div>
+        <div class="tumb-img"><img src="images/showcase5.jpg" alt="">
+          <a class="tumb-overlay show" href="#"><img src="images/zoom.svg" alt=""></a>
+        </div>
+        <div class="tumb-img"><img src="images/showcase6.jpg" alt="">
+          <a class="tumb-overlay show" href="#"><img src="images/zoom.svg" alt=""></a>
+        </div>
+        <div class="tumb-img"><img src="images/showcase7.jpg" alt="">
+          <a class="tumb-overlay show" href="#"><img src="images/zoom.svg" alt=""></a>
+        </div>
+        <div class="tumb-img"><img src="images/showcase8.jpg" alt="">  <a class="tumb-overlay show" href="#"><img src="images/zoom.svg" alt=""></a>
+        </div>
       </div>
     </div>
   </section>
-  <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
+  <section id="contact">
+    <div class="wrapper">
+      <h2 class="title">НАМЕРЕТЕ НИ</h2>
+      <div class="contact-container">
+      <div class="contact-info">
+        <h5>Vestibulum dapibus varius.</h5>
+        <p>44 Shirley Ave.<br />West Chicago, IL 60185</p>
+        <p><span>(226) 906-2721</span><span>(671) 925-1352</span></p>
+        <p>youremail@gmail.com</p>
+        <div class="btn"><a href="#">Запази маса</a></div>
+      </div>
+        <div id="map"></div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="wrapper">
+      <div class="site-map">
+        <p class="footer-title"> Именаресторанта</p>
+        <ul>
+          <li><a href="#">Начало</a></li>
+          <li><a href="#">Меню</a></li>
+          <li><a href="#">Галерия</a></li>
+          <li><a href="#">Новини</a></li>
+          <li><a href="#">Контакти</a></li>
+        </ul>
+      </div>
+      <div class="work-time">
+        <p class="footer-title">Работно време: </p>
+        <p>От понеделник до събота:
+        <br />10:00 am - 23:00 pm</p>
+        <p>Неделя:
+        <br />12:00 am - 22:00 pm</p>
+      </div>
+      <div class="social">
+        <p class="footer-title">Следвайте ни:</p>
+        <a href="#"><img src="images/fb.png" alt=""></a>
+        <a href="#"><img src="images/instagram.png" alt=""></a>
+      </div>
+      <div class="top-arrow">
+        <a href="#"><img src="images/top-arrow.png" alt=""></a>
+      </div>
+    </div>
+  </footer>
+  <div class="copyright">
+    <p class="">© 2017 Quay Restaurant. All rights reserved.</p>
+    <p class="">DESIGNED BY Miroslav Ivanov</p>
+  </div>
+  <script>
+        function initMap() {
+          var uluru = {lat: 42.659147, lng: 23.336475};
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 14,
+            center: uluru
+          });
+          var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+          });
+        }
+      </script>
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYcSVFyfpz_Ijo-vEXrv-0T_EDdc5XT5o&callback=initMap">
+      </script>
 </body>
 </html>
