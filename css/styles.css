@@ -240,7 +240,7 @@ section {
 #menu .type ul {
   display: flex;
   justify-content: space-around;
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto;
   margin-bottom: 50px;
 }
@@ -373,7 +373,7 @@ section {
 footer {
   background: #24252f;
   color: rgba(253, 252, 252, 0.9);
-  font-size: 10px;
+  font-size: 12px;
   line-height: 18px;
   padding: 20px 0;
 }
