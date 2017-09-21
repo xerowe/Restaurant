@@ -240,7 +240,7 @@ section {
 #menu .type ul {
   display: flex;
   justify-content: space-around;
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto;
   margin-bottom: 50px;
 }
