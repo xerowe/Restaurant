@@ -3,7 +3,7 @@
 @import "mixins"
 
 section
-  padding: 50px 0
+  padding: 50px 20px
 
 .title
   +title
@@ -26,17 +26,125 @@ section
     display: flex
     justify-content: space-between
     align-items: center
-    ul
-      display: flex
-      @media screen and (max-width: 760px)
-        display: none
+  #menuToggle
+    display: block
+    position: relative
+    right: 50px
+    z-index: 1
+    user-select: none
+    input
+      display: block
+      width: 40px
+      height: 32px
+      position: absolute
+      top: -7px
+      left: -5px
+      cursor: pointer
+      opacity: 0
+      /* hide this */
+      z-index: 2
+      /* and place it over the hamburger */
+      -webkit-touch-callout: none
+
+    span
+      display: block
+      width: 33px
+      height: 4px
+      margin-bottom: 5px
+      position: relative
+      background: #cdcdcd
+      border-radius: 3px
+      z-index: 1
+      transform-origin: 4px 0px
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease
+      &:first-child
+        transform-origin: 0% 0%
+
+      &:nth-last-child(2)
+        transform-origin: 0% 100%
+
+
+    input:checked ~ span
+      opacity: 1
+      transform: rotate(45deg) translate(-2px, -1px)
+      background: $orange
+      &:nth-last-child(3)
+        opacity: 0
+        transform: rotate(0deg) scale(0.2, 0.2)
+
+      &:nth-last-child(2)
+        opacity: 1
+        transform: rotate(-45deg) translate(0, -1px)
+
+
+
+
+  /*
+   * Just a quick hamburger
+   */
+
+  /*
+   * Transform all the slices of hamburger
+   * into a crossmark.
+   */
+
+  /*
+   * But let's hide the middle one.
+   */
+
+  /*
+   * Ohyeah and the last one should go the other direction
+   */
+
+  /*
+   * Make this absolute positioned
+   * at the top left of the screen
+   */
+
+  #menu
+    position: absolute
+    width: 300px
+    margin: -100px 0 0 -80px
+    padding: 50px
+    padding-top: 125px
+    // background: rgba($white, 0.85)
+
+    list-style-type: none
+    -webkit-font-smoothing: antialiased
+    /* to stop flickering of text in safari */
+    transform-origin: 0% 0%
+    transform: translate(42%, 0)
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1)
+    a
+      color: $black
     li
-      margin-right: 20px
-      a
-        color: $white
+      padding: 10px 0
+      font-size: 22px
+      color: $white
+      transition: color 0.3s ease
+      &:hover
+        color: $orange
+
+
+  /*
+   * And let's fade it in from the left
+   */
+
+  #menuToggle input:checked ~ ul
+    transform: scale(1, 1)
+    opacity: 1
+
+    // ul
+    //   display: flex
+    //   @media screen and (max-width: 760px)
+    //     display: none
+    // li
+    //   margin-right: 20px
+    //   a
+    //     color: $white
   h1
     color: $white
-    font-size: 65px
+    font-size: 4.063rem
     text-align: center
     margin-top: 25vh
   .btn
@@ -46,6 +154,7 @@ section
 
 .bg-img
   background: url('../images/bg.jpg') center center no-repeat
+  background-size: cover
   #about .wrapper
     display: flex
     .about-left
@@ -56,7 +165,7 @@ section
       h3
         +title
         color: $black
-        font-size: 16px
+        font-size: 1rem
         margin-bottom: 20px
         text-align: left
         span
@@ -68,7 +177,7 @@ section
           vertical-align: middle
           margin-right: 30px
       p
-        font-size: 16px
+        font-size: 1rem
       a
         +btn
         color: $orange
@@ -124,12 +233,12 @@ section
         a
           color: $orange
           margin-top: 40px
-          padding-top: 10px
+          padding: 10px 0
         .divider
           border-top: 1px solid #ebebeb
           position: relative
           left: -20px
-          width: 105.4%
+          width: 104.5%
           bottom: -36px
 
 #menu
@@ -137,6 +246,10 @@ section
     ul
       display: flex
       justify-content: space-around
+<<<<<<< HEAD
+=======
+      flex-wrap: wrap
+>>>>>>> 0280bdf5e31b19e938bdba76da00bd1931cc74f0
       max-width: 650px
       margin: 0 auto
       margin-bottom: 50px
@@ -149,8 +262,9 @@ section
           margin-bottom: 5px
           width: 80%
       a
-        font-size: 18px
+        font-size: 1.125rem
         color: $black
+        margin-left: 20px
   .dishes-container
     display: flex
     justify-content: space-between
@@ -159,11 +273,11 @@ section
       flex-basis: 40%
       margin-bottom: 30px
       h5
-        font-size: 18px
+        font-size: 1.125rem
         color: $orange
         margin-bottom: 20px
       .price
-        font-size: 14px
+        font-size: 0.875rem
         color: $black
         font-weight: bold
 
@@ -179,7 +293,7 @@ section
       overflow: hidden
       position: relative
       background: null
-      transition: 10s ease-out
+
       &:hover
         .tumb-overlay
           background-color: rgba($orange, 0.8)
@@ -189,7 +303,7 @@ section
           +pulse
       img
         height: 100%
-        border-radius: 2px
+        border-radius: 4px
       .tumb-overlay
         position: absolute
         justify-content: center
@@ -203,47 +317,83 @@ section
           height: 30px
 
 #contact
-  background: #eaeaea
-  .title
-    text-align: right
-  .contact-container
-    display: flex
-    justify-content: flex-end
-    position: relative
-    #map
-      flex-basis: 75%
-      height: 450px
-    .contact-info
-      position: absolute
-      z-index: 1
-      padding: 50px 100px 150px 40px
-      background: rgba($orange, 0.95)
-      left: 0
-      margin-top: -70px
-      h5
+  padding: 50px 0 0
+  position: relative
+  #map
+    width: 100%
+    height: 600px
+  .contact-info
+    display: inline-block
+    position: absolute
+    top: 100px
+    padding: 50px 100px 150px 40px
+    background: rgba($orange, 0.95)
+    left: 50%
+    +box-shadow
+    h5
+      color: $white
+      font:
+        size: 18px
+        weight: bold
+      margin-bottom: 50px
+    p
+      font-size: 1rem
+      line-height: 26px
+      color: $white
+    .btn
+      margin-top: 50px
+      a
+        +btn
         color: $white
-        font:
-          size: 18px
-          weight: bold
-          margin-bottom: 50px
-      p
-        font-size: 16px
-        line-height: 26px
-        color: $white
-      .btn
-        margin-top: 50px
-        a
-          +btn
-          color: $white
-          border: 2px solid $white
-          font-style: italic
+        border: 2px solid $white
+        font-style: italic
+//
+// #contact
+//   background: #eaeaea
+//   .title
+//     text-align: right
+//   .contact-container
+//     display: flex
+//     justify-content: flex-end
+//     position: relative
+//     #map
+//       flex-basis: 75%
+//       height: 450px
+//     .contact-info
+//       position: absolute
+//       z-index: 1
+//       padding: 50px 100px 150px 40px
+//       background: rgba($orange, 0.95)
+//       left: 0
+//       margin-top: -70px
+//       h5
+//         color: $white
+//         font:
+//           size: 18px
+//           weight: bold
+//           margin-bottom: 50px
+//       p
+//         font-size: 16px
+//         line-height: 26px
+//         color: $white
+//       .btn
+//         margin-top: 50px
+//         a
+//           +btn
+//           color: $white
+//           border: 2px solid $white
+//           font-style: italic
 
 footer
   background: #24252f
   color: $soft-white
+<<<<<<< HEAD
   font-size: 12px
+=======
+  font-size: 0.75rem
+>>>>>>> 0280bdf5e31b19e938bdba76da00bd1931cc74f0
   line-height: 18px
-  padding: 20px 0
+  padding: 20px
   .wrapper
     display: flex
     justify-content: space-between
@@ -257,7 +407,7 @@ footer
       img
         margin-right: 10px
 .copyright
-  font-size: 10px
+  font-size: 0.625rem
   color: $soft-white
   padding-top: 20px
   padding-bottom: 5px
@@ -265,13 +415,49 @@ footer
   text-align: center
 
 @media (max-width: 1260px)
+  #hero h1
+    font-size: 3.063rem
   #menu .dishes-container
     justify-content: space-around
-  .about-right
+  .bg-img #about .wrapper .about-right img:nth-child(2)
     display: none
   .tumb-img
     flex-basis: 32%
 
-// @media (max-width: 760px)
-//   .dishes
-//     flex-basis: 100% !important
+@media screen and (max-width: 960px)
+  .bg-img #about .wrapper .about-right
+    display: none
+  .bg-img #about .wrapper .about-left
+    margin: 0
+    flex-basis: 100%
+    text-align: center
+  #news .wrapper
+    justify-content: center
+  #news .wrapper .cardNews
+    flex-basis: 100%
+    margin: 10px auto
+  #news .wrapper  .arrow
+    display: none
+  #gallery .gallery-container .tumb-img
+    flex-basis: 31%
+  #contact .contact-info
+    width: 50%
+    left: 18%
+  #menu .dishes-container .dishes
+    flex-basis: 100%
+
+@media screen and (max-width: 760px)
+  #gallery .gallery-container .tumb-img
+    flex-basis: 48%
+
+@media screen and (max-width: 440px)
+  #hero h1
+    font-size: 2.2rem
+  #contact .contact-info
+    padding: 20px 40px 40px 20px
+    top: 135px
+  footer .site-map
+    display: none
+  #news .wrapper .cardNews
+    display: flex
+    flex-direction: column

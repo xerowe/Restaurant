@@ -12,8 +12,58 @@
 <body>
   <section id="hero">
     <div class="wrapper">
-      <nav>
+    <nav role="navigation">
+      <div class="logo"><img src="images/logo.png" alt=""></div>
+    
+      <div id="menuToggle">
+        <!--
+        A fake / hidden checkbox is used as click reciever,
+        so you can use the :checked selector on it.
+        -->
+        <input type="checkbox" />
+
+        <!--
+        Some spans to act as a hamburger.
+
+        They are acting like a real hamburger,
+        not that McDonalds stuff.
+        -->
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <!--
+        Too bad the menu has to be inside of the button
+        but hey, it's pure CSS magic.
+        -->
+        <ul id="menu">
+          <a href="#"><li>Начало</li></a>
+          <a href="#"><li>Меню</li></a>
+          <a href="#"><li>Галерия</li></a>
+          <a href="#"><li>Новини</li></a>
+          <a href="#"><li>Контакти</li></a>
+        </ul>
+
+      </div>
+    </nav>
+      <!-- <nav role="navigation">
+          <div id="menuToggle">
         <div class="logo"><img src="images/logo.png" alt=""></div>
+        <div class="menuToggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul id="menu">
+          <li><a href="#">Начало</a></li>
+          <li><a href="#">Меню</a></li>
+          <li><a href="#">Галерия</a></li>
+          <li><a href="#">Новини</a></li>
+          <li><a href="#">Контакти</a></li>
+        </ul>
+        </div>
+        <!-- <div class="logo"><img src="images/logo.png" alt=""></div>
         <ul>
           <li><a href="#">Начало</a></li>
           <li><a href="#">Меню</a></li>
@@ -21,7 +71,11 @@
           <li><a href="#">Новини</a></li>
           <li><a href="#">Контакти</a></li>
         </ul>
+<<<<<<< HEAD
       </nav>
+=======
+      </nav> -->
+>>>>>>> 0280bdf5e31b19e938bdba76da00bd1931cc74f0
       <h1>Ресторант <br />Именаресторанта</h1>
       <div class="btn"><a href="#">Запази маса</a></div>
     </div>
@@ -134,19 +188,17 @@
     </div>
   </section>
   <section id="contact">
-    <div class="wrapper">
-      <h2 class="title">НАМЕРЕТЕ НИ</h2>
-      <div class="contact-container">
-      <div class="contact-info">
-        <h5>Vestibulum dapibus varius.</h5>
-        <p>44 Shirley Ave.<br />West Chicago, IL 60185</p>
-        <p><span>(226) 906-2721</span><span>(671) 925-1352</span></p>
-        <p>youremail@gmail.com</p>
-        <div class="btn"><a href="#">Запази маса</a></div>
+      <div id="map"></div>
+      <div class="wrapper">
+        <div class="contact-info">
+          <h5>Vestibulum dapibus varius.</h5>
+          <p>44 Shirley Ave.<br />West Chicago, IL 60185</p>
+          <p><span>(226) 906-2721</span><span>(671) 925-1352</span></p>
+          <p>youremail@gmail.com</p>
+          <div class="btn"><a href="#">Запази маса</a></div>
+        </div>
       </div>
-        <div id="map"></div>
-      </div>
-    </div>
+
   </section>
   <footer>
     <div class="wrapper">
@@ -184,9 +236,10 @@
   <script>
         function initMap() {
           var uluru = {lat: 42.659147, lng: 23.336475};
+          var left = {lat: 42.656964, lng: 23.356586};
           var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 14,
-            center: uluru
+            zoom: 15,
+            center: left
           });
           var marker = new google.maps.Marker({
             position: uluru,
