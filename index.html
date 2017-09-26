@@ -14,19 +14,23 @@
     <div class="wrapper">
     <nav role="navigation">
       <div class="logo"><img src="images/logo.png" alt=""></div>
-      <div id="menuToggle">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
-        <ul id="menu">
-          <a href="#"><li>Начало</li></a>
-          <a href="#"><li>Меню</li></a>
-          <a href="#"><li>Галерия</li></a>
-          <a href="#"><li>Новини</li></a>
-          <a href="#"><li>Контакти</li></a>
-        </ul>
+      <div id="modalBtn" class="button">
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
       </div>
+      <div id="simpleModal" class="modal">
+        <div class="modal-content">
+          <span class="closeBtn">&times;</span>
+          <ul id="menu">
+             <a href="#"><li>Начало</li></a>
+             <a href="#"><li>Меню</li></a>
+             <a href="#"><li>Галерия</li></a>
+             <a href="#"><li>Новини</li></a>
+             <a href="#"><li>Контакти</li></a>
+         </ul>
+    </div>
+  </div>
     </nav>
       <h1>Ресторант <br />Именаресторанта</h1>
       <div class="btn"><a href="#">Запази маса</a></div>
@@ -202,5 +206,6 @@
       <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYcSVFyfpz_Ijo-vEXrv-0T_EDdc5XT5o&callback=initMap">
       </script>
+  <script src="js/main.js"></script>
 </body>
 </html>

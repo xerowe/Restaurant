@@ -26,122 +26,76 @@ section
     display: flex
     justify-content: space-between
     align-items: center
-  #menuToggle
-    display: block
-    position: relative
-    right: 50px
-    z-index: 1
-    user-select: none
-    input
-      display: block
-      width: 40px
-      height: 32px
-      position: absolute
-      top: -7px
-      left: -5px
-      cursor: pointer
-      opacity: 0
-      /* hide this */
-      z-index: 2
-      /* and place it over the hamburger */
-      -webkit-touch-callout: none
-
-    span
-      display: block
-      width: 33px
-      height: 4px
-      margin-bottom: 5px
+    #modalBtn
+      width: $width-line
+      height: $height-icon
       position: relative
-      background: #cdcdcd
-      border-radius: 3px
-      z-index: 1
-      transform-origin: 4px 0px
-      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease
-      &:first-child
-        transform-origin: 0% 0%
+      cursor: pointer
+      .line
+        display: block
+        background: $orange
+        width: $width-line
+        height: $height-line
+        position: absolute
+        left: 0
+        border-radius: ($height-line / 2)
+        transition: all $transition-time
+        -webkit-transition: all $transition-time
+        -moz-transition: all $transition-time
+        &.line-1
+          top: 0
+        &.line-2
+          top: 50%
 
-      &:nth-last-child(2)
-        transform-origin: 0% 100%
-
-
-    input:checked ~ span
-      opacity: 1
-      transform: rotate(45deg) translate(-2px, -1px)
-      background: $orange
-      &:nth-last-child(3)
+        &.line-3
+          top: 100%
+      &:hover, &:focus
+        .line-1
+          transform: translateY($height-line / 2 * -1)
+        .line-3
+          transform: translateY($height-line / 2)
+    .active
+      .line-1
+        transform: translateY($translateY) translateX($translateX) rotate($rotation)
+      .line-2
         opacity: 0
-        transform: rotate(0deg) scale(0.2, 0.2)
 
-      &:nth-last-child(2)
-        opacity: 1
-        transform: rotate(-45deg) translate(0, -1px)
-
-
-
-
-  /*
-   * Just a quick hamburger
-   */
-
-  /*
-   * Transform all the slices of hamburger
-   * into a crossmark.
-   */
-
-  /*
-   * But let's hide the middle one.
-   */
-
-  /*
-   * Ohyeah and the last one should go the other direction
-   */
-
-  /*
-   * Make this absolute positioned
-   * at the top left of the screen
-   */
-
+      .line-3
+        transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1)
+  .modal
+    display: none
+    position: fixed
+    z-index: 999
+    left: 0
+    top: 0
+    height: 100%
+    width: 100%
+    overflow: auto
+    background-color: rgba(0,0,0,0.9)
+    .modal-content
+      margin: 20% auto
+      width: 70%
+      text-align: center
+      +modalopen
+    .closeBtn
+      color: #ccc
+      float: right
+      font-size: 30px
+      color: #fff
+    .closeBtn:hover,.closeBtn:focus
+      color: $orange
+      text-decoration: none
+      cursor: pointer
   #menu
-    position: absolute
-    width: 300px
-    margin: -100px 0 0 -80px
-    padding: 50px
-    padding-top: 125px
-    // background: rgba($white, 0.85)
-
+    display: inline-block
     list-style-type: none
-    -webkit-font-smoothing: antialiased
-    /* to stop flickering of text in safari */
-    transform-origin: 0% 0%
-    transform: translate(42%, 0)
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1)
-    a
-      color: $black
     li
       padding: 10px 0
-      font-size: 22px
+      font-size: 1.375rem
       color: $white
-      transition: color 0.3s ease
+      transition: color 0.2s ease
       &:hover
         color: $orange
-
-
-  /*
-   * And let's fade it in from the left
-   */
-
-  #menuToggle input:checked ~ ul
-    transform: scale(1, 1)
-    opacity: 1
-
-    // ul
-    //   display: flex
-    //   @media screen and (max-width: 760px)
-    //     display: none
-    // li
-    //   margin-right: 20px
-    //   a
-    //     color: $white
   h1
     color: $white
     font-size: 4.063rem

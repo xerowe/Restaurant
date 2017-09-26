@@ -50,6 +50,14 @@ a {
     transform: scale(1.5);
   }
 }
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 section {
   padding: 50px 20px;
 }
@@ -84,106 +92,94 @@ section {
   background-size: cover;
   min-height: 80vh;
   padding: 20px 0;
-  /* Just a quick hamburger
-   */
-  /* Transform all the slices of hamburger
-   * into a crossmark.
-   */
-  /* But let's hide the middle one.
-   */
-  /* Ohyeah and the last one should go the other direction
-   */
-  /* Make this absolute positioned
-   * at the top left of the screen
-   */
-  /* And let's fade it in from the left
-   */
 }
 #hero nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-#hero #menuToggle {
-  display: block;
+#hero nav #modalBtn {
+  width: 30px;
+  height: 20px;
   position: relative;
-  right: 50px;
-  z-index: 1;
-  user-select: none;
-}
-#hero #menuToggle input {
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
   cursor: pointer;
-  opacity: 0;
-  /* hide this */
-  z-index: 2;
-  /* and place it over the hamburger */
-  -webkit-touch-callout: none;
 }
-#hero #menuToggle span {
+#hero nav #modalBtn .line {
   display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
-  background: #cdcdcd;
-  border-radius: 3px;
-  z-index: 1;
-  transform-origin: 4px 0px;
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
-}
-#hero #menuToggle span:first-child {
-  transform-origin: 0% 0%;
-}
-#hero #menuToggle span:nth-last-child(2) {
-  transform-origin: 0% 100%;
-}
-#hero #menuToggle input:checked ~ span {
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
   background: #f5bb00;
+  width: 30px;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  border-radius: 2px;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
 }
-#hero #menuToggle input:checked ~ span:nth-last-child(3) {
+#hero nav #modalBtn .line.line-1 {
+  top: 0;
+}
+#hero nav #modalBtn .line.line-2 {
+  top: 50%;
+}
+#hero nav #modalBtn .line.line-3 {
+  top: 100%;
+}
+#hero nav #modalBtn:hover .line-1, #hero nav #modalBtn:focus .line-1 {
+  transform: translateY(-2px);
+}
+#hero nav #modalBtn:hover .line-3, #hero nav #modalBtn:focus .line-3 {
+  transform: translateY(2px);
+}
+#hero nav .active .line-1 {
+  transform: translateY(10px) translateX(0) rotate(45deg);
+}
+#hero nav .active .line-2 {
   opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
 }
-#hero #menuToggle input:checked ~ span:nth-last-child(2) {
-  opacity: 1;
-  transform: rotate(-45deg) translate(0, -1px);
+#hero nav .active .line-3 {
+  transform: translateY(-10px) translateX(0) rotate(-45deg);
+}
+#hero .modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+#hero .modal .modal-content {
+  margin: 20% auto;
+  width: 70%;
+  text-align: center;
+  animation: modalopen 1s;
+}
+#hero .modal .closeBtn {
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+  color: #fff;
+}
+#hero .modal .closeBtn:hover, #hero .modal .closeBtn:focus {
+  color: #f5bb00;
+  text-decoration: none;
+  cursor: pointer;
 }
 #hero #menu {
-  position: absolute;
-  width: 300px;
-  margin: -100px 0 0 -80px;
-  padding: 50px;
-  padding-top: 125px;
+  display: inline-block;
   list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
-  transform-origin: 0% 0%;
-  transform: translate(42%, 0);
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-}
-#hero #menu a {
-  color: #555555;
 }
 #hero #menu li {
   padding: 10px 0;
-  font-size: 22px;
+  font-size: 1.375rem;
   color: #fdfcfc;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 #hero #menu li:hover {
   color: #f5bb00;
-}
-#hero #menuToggle input:checked ~ ul {
-  transform: scale(1, 1);
-  opacity: 1;
 }
 #hero h1 {
   color: #fdfcfc;
